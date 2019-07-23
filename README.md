@@ -1,7 +1,7 @@
-#selenium link:#
+# selenium link: #
 * official site:https://selenium-python.readthedocs.io/installation.html#introduction
 ------------------------------------
-#reference link:#
+# reference link: #
 * blog1:https://www.cnblogs.com/chen0307/p/9956424.html
 * blog2:https://blog.csdn.net/wtwcsdn123/article/details/82023720
 
