@@ -22,4 +22,6 @@
 4 git branch bName  >>>  git checkout bName  
 5 git add \*\*.lastname  >>> git commit -m  "postScript"  
 6 after checkout to be merge branch type command: git merge (branchName)  
-7 
+
+# markdown common use: #
+*1* newlink in end of line add two blank and click enter
