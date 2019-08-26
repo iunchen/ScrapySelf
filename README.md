@@ -16,9 +16,10 @@
 * [Blog2:contain photo](https://blog.csdn.net/MemoryD/article/details/83147300)
 
 # git common use command: #
-1 git remote add origin git...git /n
-2 git push (-u[first]) origin master(other branch) \n
-3 git clone git\*\*\*.git \n
-4 git branch bName  >>>  git checkout bName \n
-5 git add \*\*.lastname  >>> git commit -m  "postScript" \n
-6 after checkout to be merge branch type command: git merge (branchName) \n
+1 git remote add origin git...git  
+2 git push (-u[first]) origin master(other branch)  
+3 git clone git\*\*\*.git  
+4 git branch bName  >>>  git checkout bName  
+5 git add \*\*.lastname  >>> git commit -m  "postScript"  
+6 after checkout to be merge branch type command: git merge (branchName)  
+7 
