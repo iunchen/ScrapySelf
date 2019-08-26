@@ -4,8 +4,9 @@ from selenium.webdriver.common.by import By
 from selenium.webdriver.support.ui import WebDriverWait
 from selenium.webdriver.support import expected_conditions
 from selenium.webdriver.support import expected_conditions as EC
+from selenium.webdriver.common.action_chains import ActionChains
 from bs4 import BeautifulSoup
-from getlink import Link
+from getlink import *
 from download import DownloadPhoto
 import re
 import time
@@ -20,23 +21,34 @@ driver.get(target)
 #formatStr = soupStr.prettify()
 #find_links = soupStr.find_all('link')
 #print(find_links)
+#wait = WebDriverWait(driver,25)
 
-wait = WebDriverWait(driver,25)
-preview = wait.until(EC.element_to_be_clickable((By.XPATH,'//*[@id="sh_lt"]')))
-preview.click()
-preview.click()
-time.sleep(3)
-webSources = driver.page_source
-
-linkGet = Link()
-photoDownload = DownloadPhoto()
-downloadlink = linkGet.analysis(webSources)
-if downloadlink != 'fail':
-    photoDownload.get(downloadlink)
-else:
-    print("can't download,links="+downloadlink)
-
-
+index = 1
+previousLink = ''
+while index > 0:
+    if index >1:
+        preview = driver.find_element_by_id('sh_lt')
+        ActionChains(driver).double_click(preview).perform()
+        time.sleep(2)
+        webSources = driver.page_source
+        linkGet = DivLink()
+    else:
+        webSources = driver.page_source
+        linkGet = HrefLink()
+    photoDownload = DownloadPhoto()
+    downloadlink = linkGet.analysis(webSources)
+    if previousLink == downloadlink:
+        print('Scrapy Done')
+        break
+    previousLink = downloadlink
+    print(str(index)+':'+downloadlink)
+    if downloadlink != 'fail':
+        photoDownload.get(downloadlink)
+    else:
+        print("can't download,links="+downloadlink)
+    index += 1
+driver.close()
+    
 '''
 soupStr = BeautifulSoup(webSources)
 formatStr = soupStr.prettify()
