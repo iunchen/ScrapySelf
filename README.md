@@ -16,7 +16,7 @@
 * [Blog2:contain photo](https://blog.csdn.net/MemoryD/article/details/83147300)
 
 # git common use command: #
-1 git remote add origin git...git \n
+1 git remote add origin git...git /n
 2 git push (-u[first]) origin master(other branch) \n
 3 git clone git\*\*\*.git \n
 4 git branch bName  >>>  git checkout bName \n
