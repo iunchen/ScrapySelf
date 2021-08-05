@@ -3,13 +3,14 @@ import urllib.request
 import json
 import requests
 import os
-
+#图片保存路径
 path = "D:\\picture\\weibo\\"
 
 #修改微博ID，爬取的主要识别方式
 id = '7459574792'
 #代理IP地址
 proxy_addr = "122.241.72.191:808"
+#pic_num是图片计数
 pic_num = 0
 #/weibo/文件夹下新建的文件夹名称
 weibo_name = "jinjin"
